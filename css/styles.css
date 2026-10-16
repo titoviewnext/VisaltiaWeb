@@ -1532,14 +1532,27 @@ img, svg {
 }
 
 .app-icon {
-  width: 58px;
-  height: 58px;
-  border-radius: 16px;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
   display: grid;
   place-items: center;
   color: var(--white);
   flex-shrink: 0;
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.app-icon.app-icon-img {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  padding: 4px;
+}
+
+.app-icon.app-icon-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .app-icon.icon-iptv { background: linear-gradient(135deg, #0ea5e9, #2563eb); }

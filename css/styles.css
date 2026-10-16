@@ -253,9 +253,9 @@ img, svg {
 }
 
 .brand-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 11px;
   background: linear-gradient(135deg, var(--electric-500), var(--fiscal-500));
   display: grid;
   place-items: center;
@@ -267,8 +267,8 @@ img, svg {
 
 .brand-icon.brand-icon-img {
   background: var(--white);
-  padding: 3px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  padding: 2px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
 }
 
 .brand-icon.brand-icon-img img {

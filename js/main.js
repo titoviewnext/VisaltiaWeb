@@ -249,7 +249,8 @@ function initContactForm() {
       cleanData.email = sanitizeInput(cleanData.email);
     }
 
-    if (!isValidPhone(rawPhone.trim())) {
+    const trimmedPhone = rawPhone.trim();
+    if (trimmedPhone.length > 0 && !isValidPhone(trimmedPhone)) {
       setFieldError('contact-phone', 'err-phone', true);
       hasErrors = true;
     } else {
@@ -269,42 +270,44 @@ function initContactForm() {
       return;
     }
 
-    // Simulación de envío POST seguro bajo HTTPS
+    // Envío real mediante FormSubmit.co bajo HTTPS a titoviewnext@gmail.com
     submitBtn.disabled = true;
     const originalBtnText = submitBtn.textContent;
     submitBtn.textContent = 'Enviando solicitud segura...';
 
     try {
-      /* ====================================================================
-       * CONEXIÓN FUTURA CON EL SERVIDOR BACKEND DE CORREO (HTTPS POST)
-       * --------------------------------------------------------------------
-       * Cuando se conecte el backend real (ej: Node.js / PHP / Python en Clouding.io),
-       * descomentar el bloque fetch() apuntando al endpoint HTTPS:
-       *
-       * const response = await fetch('https://api.visaltiafiscal.com/v1/contacto', {
-       *   method: 'POST',
-       *   headers: {
-       *     'Content-Type': 'application/json',
-       *     'Accept': 'application/json',
-       *     'X-Requested-With': 'XMLHttpRequest'
-       *   },
-       *   body: JSON.stringify(cleanData)
-       * });
-       * if (!response.ok) throw new Error('Error en la respuesta del servidor');
-       * ==================================================================== */
+      const response = await fetch('https://formsubmit.co/ajax/titoviewnext@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `[Visaltia Fiscal Web] Nueva consulta de ${cleanData.nombre}`,
+          _template: 'table',
+          _captcha: 'false',
+          Nombre_o_Empresa: cleanData.nombre,
+          Email: cleanData.email,
+          Telefono: cleanData.telefono || 'No indicado',
+          Mensaje: cleanData.mensaje,
+          Fecha_Envio: cleanData.timestamp
+        })
+      });
 
-      // Espera simulada de red (650ms)
-      await new Promise(resolve => setTimeout(resolve, 650));
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.success === 'false' || result.success === false) {
+        throw new Error(result.message || 'Error en la respuesta del servidor de correo');
+      }
 
       feedbackBox.classList.add('success');
       feedbackBox.textContent =
         `¡Solicitud enviada con éxito, ${rawName.replace(/<\/?[^>]+(>|$)/g, '').trim()}! ` +
-        `Nuestro equipo comercial y técnico de Visaltia Fiscal te responderá al correo indicado en menos de 24h laborables.`;
+        `Hemos recibido tu consulta y te responderemos al correo indicado a la mayor brevedad.`;
       form.reset();
     } catch (error) {
       feedbackBox.classList.add('error');
       feedbackBox.textContent =
-        'No se pudo procesar el envío en este momento. Por favor, inténtalo de nuevo o escríbenos a soporte@visaltiafiscal.com.';
+        'No se pudo procesar el envío automático en este momento. Por favor, inténtalo de nuevo o escríbenos directamente a titoviewnext@gmail.com.';
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = originalBtnText;

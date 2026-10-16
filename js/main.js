@@ -15,7 +15,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initScrollAnimations();
-  initPricingToggle();
+  initScreenshotTabs();
   initPaymentPlaceholders();
   initContactForm();
   initLegalModals();
@@ -79,34 +79,33 @@ function initScrollAnimations() {
 }
 
 /**
- * 3. Conmutador de Planes Mensual / Anual
+ * 3. Selector interactivo de las 5 capturas reales de Visaltia Fiscal
  */
-function initPricingToggle() {
-  const btnMonthly = document.getElementById('billing-monthly');
-  const btnAnnual = document.getElementById('billing-annual');
-  const priceNormal = document.getElementById('price-normal');
-  const pricePremium = document.getElementById('price-premium');
-  const periodLabels = document.querySelectorAll('.billing-period-label');
+function initScreenshotTabs() {
+  const tabs = document.querySelectorAll('.screen-tab');
+  const screenImg = document.getElementById('active-screen-img');
+  const screenCaption = document.getElementById('active-screen-caption');
 
-  if (!btnMonthly || !btnAnnual) return;
+  if (!tabs.length || !screenImg) return;
 
-  btnMonthly.addEventListener('click', () => {
-    btnMonthly.classList.add('active');
-    btnAnnual.classList.remove('active');
-    if (priceNormal) priceNormal.textContent = '19';
-    if (pricePremium) pricePremium.textContent = '49';
-    periodLabels.forEach(lbl => {
-      lbl.textContent = '/ mes (IVA no incl.)';
-    });
-  });
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
 
-  btnAnnual.addEventListener('click', () => {
-    btnAnnual.classList.add('active');
-    btnMonthly.classList.remove('active');
-    if (priceNormal) priceNormal.textContent = '15';
-    if (pricePremium) pricePremium.textContent = '39';
-    periodLabels.forEach(lbl => {
-      lbl.textContent = '/ mes facturado anualmente (-20%)';
+      const newSrc = tab.getAttribute('data-screen');
+      const newCaption = tab.getAttribute('data-caption');
+
+      if (newSrc) {
+        screenImg.style.opacity = '0.35';
+        setTimeout(() => {
+          screenImg.src = newSrc;
+          if (screenCaption && newCaption) {
+            screenCaption.textContent = newCaption;
+          }
+          screenImg.style.opacity = '1';
+        }, 120);
+      }
     });
   });
 }

@@ -124,113 +124,26 @@
           </div>
         </div>
 
-        <!-- Columna Derecha: Ilustración Interactiva de Facturas en Abanico (Estilo Brisk Invoicing) -->
+        <!-- Columna Derecha: Capturas Reales de Visaltia Fiscal en Abanico (Estilo Brisk Invoicing) -->
         <div class="hero-visual reveal">
-          <div class="invoice-stack" aria-label="Vista previa del dashboard y factura electrónica Visaltia Fiscal">
-            <!-- Tarjeta izquierda en abanico -->
-            <div class="fan-card fan-card-left" aria-hidden="true">
-              <div style="font-weight:700; color:#0f172a; margin-bottom:8px;">Escáner IA Gemini 2.0</div>
-              <div style="height:8px; background:#94a3b8; border-radius:4px; width:70%; margin-bottom:6px;"></div>
-              <div style="height:8px; background:#cbd5e1; border-radius:4px; width:50%; margin-bottom:16px;"></div>
-              <div style="border-top:1px solid #94a3b8; padding-top:10px; margin-top:120px; font-weight:700;">REG-2026-0142 OK</div>
+          <div class="invoice-stack real-screens-stack" aria-label="Capturas reales de Visaltia Fiscal y factura oficial con QR Veri*factu">
+            <!-- Captura izquierda en abanico: Cuadro de Mando Modelos 303 y 130 -->
+            <div class="fan-card fan-card-left fan-screen" aria-hidden="true">
+              <img src="img/captura-cuadro-mando.png" alt="Cuadro de Mando Modelos 303 y 130 en Visaltia Fiscal" />
             </div>
 
-            <!-- Tarjeta derecha en abanico -->
-            <div class="fan-card fan-card-right" aria-hidden="true">
-              <div style="font-weight:700; color:#0f172a; margin-bottom:8px;">Modelos 303 &amp; 130</div>
-              <div style="height:8px; background:#94a3b8; border-radius:4px; width:80%; margin-bottom:6px;"></div>
-              <div style="height:8px; background:#cbd5e1; border-radius:4px; width:60%; margin-bottom:16px;"></div>
-              <div style="border-top:1px solid #94a3b8; padding-top:10px; margin-top:120px; font-weight:700; color:#0d9f6e;">Huella SHA-256 OK</div>
+            <!-- Captura derecha en abanico: Escáner Inteligente PRO y Gastos -->
+            <div class="fan-card fan-card-right fan-screen" aria-hidden="true">
+              <img src="img/captura-gastos-ia.png" alt="Registro de Gastos y Escáner Inteligente PRO en Visaltia Fiscal" />
             </div>
 
-            <!-- Factura Principal Central -->
-            <div class="main-invoice-card">
-              <div class="inv-header">
-                <div>
-                  <div class="inv-brand">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0055ff" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                    Visaltia Suites &amp; Pyme S.L.
-                  </div>
-                  <span style="font-size:0.72rem; color:#64748b;">NIF: B-98765432 · Serie FAC2026</span>
-                </div>
-                <span class="inv-badge-verifactu">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  VERI*FACTU SHA-256
-                </span>
-              </div>
-
-              <div class="inv-meta">
-                <div>
-                  <strong>Cliente:</strong> Grupo Hotelero Mirador S.A.<br />
-                  <span>CIF: A-28451900 · Madrid, España</span>
-                </div>
-                <div style="text-align:right;">
-                  <strong>Factura Nº:</strong> FAC2026-0842<br />
-                  <span>Fecha: 16/10/2026</span>
-                </div>
-              </div>
-
-              <table class="inv-table">
-                <thead>
-                  <tr>
-                    <th>Concepto</th>
-                    <th class="num">Uds.</th>
-                    <th class="num">IVA</th>
-                    <th class="num">Total</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Estancia Suite Ejecutiva (4 noches)</td>
-                    <td class="num">4</td>
-                    <td class="num">10%</td>
-                    <td class="num">660,00 €</td>
-                  </tr>
-                  <tr>
-                    <td>Servicio Consultoría &amp; Gestión</td>
-                    <td class="num">1</td>
-                    <td class="num">21%</td>
-                    <td class="num">302,50 €</td>
-                  </tr>
-                  <tr>
-                    <td>Suplementos &amp; Tasa Turística</td>
-                    <td class="num">2</td>
-                    <td class="num">10%</td>
-                    <td class="num">44,00 €</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <div class="inv-footer">
-                <div class="qr-box">
-                  <!-- Código QR Veri*factu SVG -->
-                  <svg class="qr-svg" viewBox="0 0 36 36" fill="#0a1628" aria-label="Código QR tributario Veri*factu">
-                    <rect x="2" y="2" width="10" height="10" fill="none" stroke="#0a1628" stroke-width="2"/>
-                    <rect x="5" y="5" width="4" height="4"/>
-                    <rect x="24" y="2" width="10" height="10" fill="none" stroke="#0a1628" stroke-width="2"/>
-                    <rect x="27" y="5" width="4" height="4"/>
-                    <rect x="2" y="24" width="10" height="10" fill="none" stroke="#0a1628" stroke-width="2"/>
-                    <rect x="5" y="27" width="4" height="4"/>
-                    <rect x="15" y="4" width="3" height="3"/>
-                    <rect x="19" y="8" width="3" height="3"/>
-                    <rect x="14" y="14" width="4" height="4"/>
-                    <rect x="20" y="16" width="3" height="6"/>
-                    <rect x="26" y="15" width="6" height="3"/>
-                    <rect x="15" y="24" width="4" height="4"/>
-                    <rect x="22" y="26" width="5" height="5"/>
-                    <rect x="29" y="29" width="4" height="4"/>
-                  </svg>
-                  <div class="qr-text">
-                    <strong>QR Oficial Sede AEAT</strong>
-                    sede.agenciatributaria.gob.es<br />
-                    SHA-256: <code>8F9A...3C1E</code>
-                  </div>
-                </div>
-                <div class="inv-total-box">
-                  <span class="lbl">Total Factura (Imp. incl.)</span>
-                  <strong class="amount">1.006,50 €</strong>
-                </div>
-              </div>
+            <!-- Captura Principal Central: Factura Oficial PDF con QR de la Sede AEAT -->
+            <div class="main-invoice-card real-main-screen">
+              <img
+                src="img/captura-factura-pdf.png"
+                alt="Vista Previa de Factura Oficial en Visaltia Fiscal con Código QR Veri*factu de la Sede de la AEAT"
+                class="hero-main-img"
+              />
             </div>
           </div>
         </div>
@@ -493,65 +406,44 @@
           </p>
         </div>
 
-        <!-- Bloque Alterno 1 (Estilo Brisk Invoicing) -->
+        <!-- Galería Interactiva + Bloques Alternos con Capturas Reales de Visaltia Fiscal -->
+        <div class="screenshot-tabs reveal" role="tablist" aria-label="Vistas reales de Visaltia Fiscal">
+          <button type="button" class="screen-tab active" data-screen="img/captura-cuadro-mando.png" data-caption="Cuadro de Mando Fiscal — Control Tributario y Liquidaciones (Modelos 303 y 130)">
+            📊 Cuadro de Mando (303 / 130)
+          </button>
+          <button type="button" class="screen-tab" data-screen="img/captura-facturacion.png" data-caption="Emisión de Nueva Factura Reglamentaria y Registro Veri*factu Encadenado">
+            🧾 Emisión y Registro Veri*factu
+          </button>
+          <button type="button" class="screen-tab" data-screen="img/captura-gastos-ia.png" data-caption="Registrar Gasto Deducible con Escáner Inteligente PRO (IA) y Libro de Gastos">
+            🤖 Escáner de Gastos IA PRO
+          </button>
+          <button type="button" class="screen-tab" data-screen="img/captura-informes.png" data-caption="Módulo de Informes Oficiales AEAT: Libros Registro, Modelo 347 y P&amp;L">
+            📑 Libros AEAT, 347 y P&amp;L
+          </button>
+          <button type="button" class="screen-tab" data-screen="img/captura-factura-pdf.png" data-caption="Vista Previa de Impresión / PDF de Factura con Código QR Oficial AEAT">
+            🖨️ Factura PDF con QR AEAT
+          </button>
+        </div>
+
+        <!-- Bloque Alterno 1: Visor Principal de Capturas Reales -->
         <div class="feature-row reveal">
           <div class="feature-visual">
-            <div class="mockup-window">
+            <div class="mockup-window real-screenshot-window">
               <div class="mockup-bar">
                 <span class="mockup-dot red"></span>
                 <span class="mockup-dot yellow"></span>
                 <span class="mockup-dot green"></span>
-                <span style="color:#94a3b8; font-size:0.75rem; margin-left:8px;">Cuadro de Mando Fiscal — Modelos 303, 130 y 347</span>
+                <span id="active-screen-caption" style="color:#cbd5e1; font-size:0.75rem; margin-left:8px;">
+                  Cuadro de Mando Fiscal — Control Tributario y Liquidaciones (Modelos 303 y 130)
+                </span>
               </div>
-              <div class="mockup-body">
-                <div class="kpi-mini-grid">
-                  <div class="kpi-mini-card">
-                    <span>Modelo 303 (IVA 3T)</span>
-                    <strong>+1.840,20 €</strong>
-                  </div>
-                  <div class="kpi-mini-card">
-                    <span>Modelo 130 (IRPF 20%)</span>
-                    <strong>960,00 €</strong>
-                  </div>
-                  <div class="kpi-mini-card">
-                    <span>Registros Veri*factu</span>
-                    <strong style="color:#0d9f6e;">100% SHA-256</strong>
-                  </div>
-                </div>
-                <table class="inv-table" style="margin-bottom:0;">
-                  <thead>
-                    <tr>
-                      <th>Serie / Nº</th>
-                      <th>Cliente / Proveedor</th>
-                      <th>Veri*factu AEAT</th>
-                      <th>Registro RIVA</th>
-                      <th class="num">Total</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><strong>FAC2026-0842</strong></td>
-                      <td>Hotel Boutique Sol S.L.</td>
-                      <td><span class="status-pill status-paid">QR Verificado</span></td>
-                      <td>Expedida</td>
-                      <td class="num"><strong>1.006,50 €</strong></td>
-                    </tr>
-                    <tr>
-                      <td><strong>REG-2026-0142</strong></td>
-                      <td>Endesa Energía S.A.U.</td>
-                      <td><span class="status-pill status-paid">IA Gemini 2.0</span></td>
-                      <td>Recibida (Art.64)</td>
-                      <td class="num"><strong>348,40 €</strong></td>
-                    </tr>
-                    <tr>
-                      <td><strong>SIM2026-0319</strong></td>
-                      <td>Estancia Apartamento Norte</td>
-                      <td><span class="status-pill status-paid">QR Verificado</span></td>
-                      <td>Simplificada</td>
-                      <td class="num"><strong>285,00 €</strong></td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="screenshot-frame-body">
+                <img
+                  id="active-screen-img"
+                  src="img/captura-cuadro-mando.png"
+                  alt="Captura real de Visaltia Fiscal mostrando el Cuadro de Mando de los Modelos 303 y 130"
+                  class="real-app-screenshot"
+                />
               </div>
             </div>
           </div>
@@ -559,7 +451,7 @@
           <div class="feature-info">
             <h3>Del ticket en papel al Libro Oficial de Hacienda en 1 segundo</h3>
             <p>
-              Combina la rapidez del autocompletado por teclado (<code>TAB</code> / <code>ENTER</code>) con el motor de visión artificial <strong>Google Gemini 2.0 Flash</strong> y nuestro lector privado de QR Veri*factu en el navegador.
+              Interfaz real de <strong>Visaltia Fiscal</strong> diseñada con baja altura ergonómica: controla tus liquidaciones de IVA (Modelo 303) e IRPF (Modelo 130) en tiempo real y digitaliza gastos con el <strong>Escáner Inteligente PRO (Google Gemini 2.0 Flash)</strong>.
             </p>
             <ul class="feature-list">
               <li>
@@ -572,10 +464,56 @@
               </li>
               <li>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Conexión directa con tu asesoría:</strong> Envía por email todos tus libros oficiales en PDF A4 con cabecera corporativa o Excel con un solo clic.</span>
+                <span><strong>Conexión directa con tu asesoría:</strong> Envía por email todos tus libros oficiales en PDF A4 con cabecera corporativa o Excel/CSV con un solo clic.</span>
               </li>
             </ul>
             <a href="#contacto" class="btn btn-electric">Prueba la Demostración Interactiva Sin Compromiso</a>
+          </div>
+        </div>
+
+        <!-- Bloque Alterno 2: Libros Registro Oficiales AEAT y Emisión Reglamentaria -->
+        <div class="feature-row reverse reveal">
+          <div class="feature-visual">
+            <div class="mockup-window real-screenshot-window">
+              <div class="mockup-bar">
+                <span class="mockup-dot red"></span>
+                <span class="mockup-dot yellow"></span>
+                <span class="mockup-dot green"></span>
+                <span style="color:#cbd5e1; font-size:0.75rem; margin-left:8px;">
+                  Libros Registro AEAT (Art. 63 y 64 RIVA), Modelo 347 y Pérdidas y Ganancias
+                </span>
+              </div>
+              <div class="screenshot-frame-body">
+                <img
+                  src="img/captura-informes.png"
+                  alt="Captura real del Módulo de Informes Fiscales y Económicos Oficiales en Visaltia Fiscal"
+                  class="real-app-screenshot"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-info">
+            <h3>Libros Oficiales AEAT, Modelo 347 y Facturas con QR Veri*factu</h3>
+            <p>
+              Exporta en 1 clic el <strong>Libro de Facturas Expedidas (Ventas)</strong>, el <strong>Libro de Facturas Recibidas (Gastos)</strong>, el <strong>Modelo 347</strong> y la cuenta de <strong>Pérdidas y Ganancias (P&amp;L)</strong> en formato Excel/CSV o PDF oficial.
+            </p>
+            <ul class="feature-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Encadenamiento criptográfico Veri*factu:</strong> Cada factura muestra su estado (Encadenada / Borrador) y su huella SHA-256 verificable.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Control de costes fijos recurrentes:</strong> Supervisa tus gastos mensuales periódicos y próximos vencimientos automáticamente.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Plantilla PDF de alta fidelidad:</strong> Cabecera azul marino con ondas, tu logotipo corporativo y recuadro de verificación QR de la Sede de la AEAT.</span>
+              </li>
+            </ul>
+            <a href="#precios" class="btn btn-outline-navy">Ver planes desde 10 € / mes</a>
           </div>
         </div>
 

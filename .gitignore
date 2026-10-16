@@ -1,0 +1,11 @@
+# Archivos del sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Variables de entorno o certificados (nunca subir claves privadas)
+.env
+.env.*
+*.pem
+*.key

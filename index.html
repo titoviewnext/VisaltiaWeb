@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Cabeceras de seguridad básicas recomendadas para despliegue bajo HTTPS -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="description" content="Visaltia Fiscal — Software de facturación inteligente en la nube para pymes, autónomos y alojamientos turísticos. 100% compatible con Veri*factu (AEAT) y la Ley Crea y Crece." />
+  <title>Visaltia Fiscal — Facturación inteligente para pymes y alojamientos | Compatible con Veri*factu</title>
+
+  <!-- Tipografía profesional Inter (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ====================================================================
+       CABECERA DE NAVEGACIÓN (NAVBAR)
+       ==================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#inicio" class="brand-logo" aria-label="Visaltia Fiscal Inicio">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <path d="m9 15 2 2 4-4"></path>
+          </svg>
+        </div>
+        <div>Visaltia <span class="accent">Fiscal</span></div>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Navegación principal">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#caracteristicas">Características</a>
+        <a href="#panel-clouding">Clouding &amp; Docker</a>
+        <a href="#precios">Planes y Precios</a>
+        <a href="#apps-android">Apps Android</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contacto" class="btn btn-outline-light btn-sm">Probar Gratis</a>
+        <a href="#precios" class="btn btn-fiscal btn-sm">Versión Premium</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ====================================================================
+         1. HERO SECTION (PORTADA PRINCIPAL - ESTILO BRISK INVOICING)
+         ==================================================================== -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <!-- Columna Izquierda: Mensaje Comercial y CTAs -->
+        <div class="hero-content reveal">
+          <span class="badge badge-fiscal">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            Homologado AEAT · Veri*factu &amp; Ley Crea y Crece
+          </span>
+
+          <h1 class="hero-title">
+            <span class="highlight-blue">Visaltia Fiscal</span> — Facturación inteligente para <span class="highlight-gold">pymes y alojamientos</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Compatible con <strong>Veri*factu</strong> y la <strong>Ley Crea y Crece</strong>. Factura rápido, seguro y desde cualquier lugar.
+          </p>
+
+          <ul class="hero-Checklist">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Emisión inmediata con huella criptográfica encadenada y código QR oficial AEAT.
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Módulos específicos para hoteles, casas rurales, apartamentos turísticos y pymes.
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Despliegue aislado de alto rendimiento preparado para contenedores en Clouding.
+            </li>
+          </ul>
+
+          <div class="hero-cta-group">
+            <a href="#contacto" class="btn btn-fiscal">
+              Probar versión gratuita
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#precios" class="btn btn-outline-light">
+              Comprar versión Premium
+            </a>
+          </div>
+
+          <!-- Texto resaltando los 3 pilares clave pedidos -->
+          <div class="hero-pillars">
+            <div class="hero-pillar-item">
+              <span class="dot"></span>
+              <strong>Facturación en la nube</strong> 24/7 multidispositivo
+            </div>
+            <div class="hero-pillar-item">
+              <span class="dot"></span>
+              <strong>Seguridad y cumplimiento legal</strong> garantizados
+            </div>
+            <div class="hero-pillar-item">
+              <span class="dot"></span>
+              <strong>Orientado a pymes y alojamientos</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Ilustración Interactiva de Facturas en Abanico (Estilo Brisk Invoicing) -->
+        <div class="hero-visual reveal">
+          <div class="invoice-stack" aria-label="Vista previa del dashboard y factura electrónica Visaltia Fiscal">
+            <!-- Tarjeta izquierda en abanico -->
+            <div class="fan-card fan-card-left" aria-hidden="true">
+              <div style="font-weight:700; color:#0f172a; margin-bottom:8px;">Reserva Alojamiento #AL-409</div>
+              <div style="height:8px; background:#94a3b8; border-radius:4px; width:70%; margin-bottom:6px;"></div>
+              <div style="height:8px; background:#cbd5e1; border-radius:4px; width:50%; margin-bottom:16px;"></div>
+              <div style="border-top:1px solid #94a3b8; padding-top:10px; margin-top:120px; font-weight:700;">Estado: Cobrada</div>
+            </div>
+
+            <!-- Tarjeta derecha en abanico -->
+            <div class="fan-card fan-card-right" aria-hidden="true">
+              <div style="font-weight:700; color:#0f172a; margin-bottom:8px;">Liquidación IVA Trimestral</div>
+              <div style="height:8px; background:#94a3b8; border-radius:4px; width:80%; margin-bottom:6px;"></div>
+              <div style="height:8px; background:#cbd5e1; border-radius:4px; width:60%; margin-bottom:16px;"></div>
+              <div style="border-top:1px solid #94a3b8; padding-top:10px; margin-top:120px; font-weight:700; color:#0d9f6e;">Huella SHA-256 OK</div>
+            </div>
+
+            <!-- Factura Principal Central -->
+            <div class="main-invoice-card">
+              <div class="inv-header">
+                <div>
+                  <div class="inv-brand">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0055ff" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    Visaltia Suites &amp; Pyme S.L.
+                  </div>
+                  <span style="font-size:0.72rem; color:#64748b;">NIF: B-98765432 · Serie VF-2026</span>
+                </div>
+                <span class="inv-badge-verifactu">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  VERI*FACTU ACTIVO
+                </span>
+              </div>
+
+              <div class="inv-meta">
+                <div>
+                  <strong>Cliente:</strong> Grupo Hotelero Mirador S.A.<br />
+                  <span>CIF: A-28451900 · Madrid, España</span>
+                </div>
+                <div style="text-align:right;">
+                  <strong>Factura Nº:</strong> VF-2026/0842<br />
+                  <span>Fecha: 16/10/2026</span>
+                </div>
+              </div>
+
+              <table class="inv-table">
+                <thead>
+                  <tr>
+                    <th>Concepto</th>
+                    <th class="num">Uds.</th>
+                    <th class="num">IVA</th>
+                    <th class="num">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Estancia Suite Ejecutiva (4 noches)</td>
+                    <td class="num">4</td>
+                    <td class="num">10%</td>
+                    <td class="num">660,00 €</td>
+                  </tr>
+                  <tr>
+                    <td>Servicio Eventos &amp; Sala Reuniones</td>
+                    <td class="num">1</td>
+                    <td class="num">21%</td>
+                    <td class="num">302,50 €</td>
+                  </tr>
+                  <tr>
+                    <td>Tasa Turística &amp; Suplementos</td>
+                    <td class="num">2</td>
+                    <td class="num">10%</td>
+                    <td class="num">44,00 €</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="inv-footer">
+                <div class="qr-box">
+                  <!-- Código QR Veri*factu SVG -->
+                  <svg class="qr-svg" viewBox="0 0 36 36" fill="#0a1628" aria-label="Código QR tributario Veri*factu">
+                    <rect x="2" y="2" width="10" height="10" fill="none" stroke="#0a1628" stroke-width="2"/>
+                    <rect x="5" y="5" width="4" height="4"/>
+                    <rect x="24" y="2" width="10" height="10" fill="none" stroke="#0a1628" stroke-width="2"/>
+                    <rect x="27" y="5" width="4" height="4"/>
+                    <rect x="2" y="24" width="10" height="10" fill="none" stroke="#0a1628" stroke-width="2"/>
+                    <rect x="5" y="27" width="4" height="4"/>
+                    <rect x="15" y="4" width="3" height="3"/>
+                    <rect x="19" y="8" width="3" height="3"/>
+                    <rect x="14" y="14" width="4" height="4"/>
+                    <rect x="20" y="16" width="3" height="6"/>
+                    <rect x="26" y="15" width="6" height="3"/>
+                    <rect x="15" y="24" width="4" height="4"/>
+                    <rect x="22" y="26" width="5" height="5"/>
+                    <rect x="29" y="29" width="4" height="4"/>
+                  </svg>
+                  <div class="qr-text">
+                    <strong>QR Tributario AEAT</strong>
+                    Factura verificable en sede electrónica<br />
+                    Huella: <code>8F9A...3C1E</code>
+                  </div>
+                </div>
+                <div class="inv-total-box">
+                  <span class="lbl">Total Factura (Imp. incl.)</span>
+                  <strong class="amount">1.006,50 €</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         BARRA DE CONFIANZA FLOTANTE (ESTILO BRISK INVOICING)
+         ==================================================================== -->
+    <div class="container trust-ribbon-wrapper reveal">
+      <div class="trust-ribbon">
+        <div class="trust-stats">
+          <div class="trust-stat-item">
+            <div class="trust-stat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="trust-stat-text">
+              <strong>100% Veri*factu</strong>
+              <span>Adaptado al RD 1007/2023 AEAT</span>
+            </div>
+          </div>
+          <div class="trust-stat-item">
+            <div class="trust-stat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/></svg>
+            </div>
+            <div class="trust-stat-text">
+              <strong>Ley Crea y Crece</strong>
+              <span>Facturación electrónica B2B lista</span>
+            </div>
+          </div>
+          <div class="trust-stat-item">
+            <div class="trust-stat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="trust-stat-text">
+              <strong>Pymes y Alojamientos</strong>
+              <span>Gestión integral de reservas y ventas</span>
+            </div>
+          </div>
+          <div class="trust-stat-item">
+            <div class="trust-stat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div class="trust-stat-text">
+              <strong>★★★★★ 4.9 / 5</strong>
+              <span>Soporte técnico directo en España</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="trust-highlights">
+          <div class="trust-highlight-card">
+            <div class="trust-highlight-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>Crea presupuestos y facturas online</h3>
+            <p>Genera facturas con tu logotipo, series personalizadas y código QR Veri*factu en menos de 10 segundos.</p>
+          </div>
+          <div class="trust-highlight-card">
+            <div class="trust-highlight-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>Automatiza estancias y servicios</h3>
+            <p>Convierte reservas de huéspedes o albaranes de clientes en facturas validadas con un solo clic.</p>
+          </div>
+          <div class="trust-highlight-card">
+            <div class="trust-highlight-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <h3>Infraestructura Clouding dedicada</h3>
+            <p>Despliegue en contenedores aislados de alta disponibilidad con copias de seguridad automáticas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         2. BENEFICIOS PRINCIPALES (7 BLOQUES CON ICONOS)
+         ==================================================================== -->
+    <section class="benefits-section" id="beneficios">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge badge-electric">Ventajas Competitivas</span>
+          <h2 class="section-title">Todo lo que tu negocio necesita para facturar sin fricciones</h2>
+          <p class="section-subtitle">
+            Diseñado específicamente para eliminar la carga administrativa de autónomos, pymes y gestores de alojamientos turísticos.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <!-- Beneficio 1 -->
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3>Facturación en segundos</h3>
+            <p>Plantillas inteligentes, autocompletado de clientes por NIF/CIF y cálculo instantáneo de bases e importes.</p>
+          </article>
+
+          <!-- Beneficio 2 -->
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </div>
+            <h3>Compatible con Veri*factu</h3>
+            <p>Encadenamiento criptográfico de registros de facturación, firma digital e inclusión automática del código QR de la AEAT.</p>
+          </article>
+
+          <!-- Beneficio 3 -->
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg>
+            </div>
+            <h3>Gestión de alojamientos y pymes</h3>
+            <p>Control de habitaciones, noches de estancia, tasas turísticas, temporadas y facturación por servicios o productos.</p>
+          </article>
+
+          <!-- Beneficio 4 -->
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Multiempresa</h3>
+            <p>Gestiona múltiples sociedades, autónomos o complejos turísticos desde un único acceso con contabilidades independientes.</p>
+          </article>
+
+          <!-- Beneficio 5 -->
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>Control automático de impuestos</h3>
+            <p>Cálculo preciso de IVA (21%, 10%, 4%, exento), IGIC, retenciones de IRPF y recargo de equivalencia listo para tus modelos fiscales.</p>
+          </article>
+
+          <!-- Beneficio 6 -->
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <h3>Envío de facturas por email</h3>
+            <p>Remite facturas en formato PDF y factura electrónica estructurada directamente al correo de tu cliente con acuse de lectura.</p>
+          </article>
+
+          <!-- Beneficio 7 -->
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <h3>Preparado para contenedores en Clouding</h3>
+            <p>Arquitectura nativa en Docker para que cada cliente Premium disfrute de su propio entorno privado y escalable en Clouding.io.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. CARACTERÍSTICAS DETALLADAS DE VISALTIA FISCAL
+         ==================================================================== -->
+    <section class="features-section" id="caracteristicas">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge badge-electric">Potencia y Sencillez</span>
+          <h2 class="section-title">Facturación sencilla, rigurosa y adaptada a la normativa</h2>
+          <p class="section-subtitle">
+            Pensado para el día a día de pymes, profesionales autónomos y propietarios de alojamientos que buscan tranquilidad fiscal y agilidad operativa.
+          </p>
+        </div>
+
+        <!-- Bloque Alterno 1 (Estilo Brisk Invoicing) -->
+        <div class="feature-row reveal">
+          <div class="feature-visual">
+            <div class="mockup-window">
+              <div class="mockup-bar">
+                <span class="mockup-dot red"></span>
+                <span class="mockup-dot yellow"></span>
+                <span class="mockup-dot green"></span>
+                <span style="color:#94a3b8; font-size:0.75rem; margin-left:8px;">Panel de Facturación — Visaltia Fiscal Cloud</span>
+              </div>
+              <div class="mockup-body">
+                <div class="kpi-mini-grid">
+                  <div class="kpi-mini-card">
+                    <span>Facturado este mes</span>
+                    <strong>24.850,00 €</strong>
+                  </div>
+                  <div class="kpi-mini-card">
+                    <span>IVA Repercutido</span>
+                    <strong>3.842,10 €</strong>
+                  </div>
+                  <div class="kpi-mini-card">
+                    <span>Registros Veri*factu</span>
+                    <strong style="color:#0d9f6e;">148 / 148 OK</strong>
+                  </div>
+                </div>
+                <table class="inv-table" style="margin-bottom:0;">
+                  <thead>
+                    <tr>
+                      <th>Nº Factura</th>
+                      <th>Cliente / Huésped</th>
+                      <th>QR AEAT</th>
+                      <th>Estado</th>
+                      <th class="num">Importe</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>VF-2026-0842</strong></td>
+                      <td>Hotel Boutique Sol S.L.</td>
+                      <td><span class="status-pill status-paid">Verificado</span></td>
+                      <td><span class="status-pill status-paid">Cobrada</span></td>
+                      <td class="num"><strong>1.006,50 €</strong></td>
+                    </tr>
+                    <tr>
+                      <td><strong>VF-2026-0841</strong></td>
+                      <td>Reformas y Diseño Norte</td>
+                      <td><span class="status-pill status-paid">Verificado</span></td>
+                      <td><span class="status-pill status-pending">Vence 25/10</span></td>
+                      <td class="num"><strong>2.420,00 €</strong></td>
+                    </tr>
+                    <tr>
+                      <td><strong>VF-2026-0840</strong></td>
+                      <td>Apartamentos Costa Azul</td>
+                      <td><span class="status-pill status-paid">Verificado</span></td>
+                      <td><span class="status-pill status-paid">Cobrada</span></td>
+                      <td class="num"><strong>785,00 €</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-info">
+            <h3>Facturación completa para productos, servicios y alojamientos</h3>
+            <p>
+              Tanto si emites facturas por horas de consultoría, venta de mercancías o estancias turísticas con desglose de IVA reducido, Visaltia Fiscal se adapta a tu modelo de negocio sin configuraciones complejas.
+            </p>
+            <ul class="feature-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Generación de QR Veri*factu:</strong> Cada factura incorpora automáticamente el código QR oficial y la huella digital inalterable exigida por la Agencia Tributaria.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Gestión de clientes y proveedores:</strong> Fichas completas con historial de facturación, tarifas habituales, descuentos y validación de NIF/IVA intracomunitario (VIES).</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Exportación a Excel y PDF:</strong> Descarga listados contables para tu gestoría en un clic o genera PDFs corporativos con diseño impecable.</span>
+              </li>
+            </ul>
+            <a href="#contacto" class="btn btn-electric">Solicitar demostración gratuita</a>
+          </div>
+        </div>
+
+        <!-- Bloque Alterno 2: Control de vencimientos, Informes y API -->
+        <div class="feature-row reverse reveal">
+          <div class="feature-visual">
+            <div class="mockup-window" style="background: linear-gradient(135deg, #0a1628, #1b3358); color:#fff; padding: 2rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                <div>
+                  <span style="font-size:0.75rem; color:#38bdf8; text-transform:uppercase; font-weight:700;">Tesorería y Analítica</span>
+                  <h4 style="font-size:1.25rem; margin-top:4px;">Control de Cobros, Vencimientos y API</h4>
+                </div>
+                <span class="badge badge-fiscal">Tiempo Real</span>
+              </div>
+              <!-- Gráfico de barras CSS -->
+              <div style="display:grid; grid-template-columns:repeat(6, 1fr); gap:12px; align-items:end; height:140px; padding:1rem; background:rgba(255,255,255,0.05); border-radius:12px; margin-bottom:1.25rem;">
+                <div style="text-align:center;">
+                  <div style="height:55px; background:#38bdf8; border-radius:6px 6px 0 0;"></div>
+                  <span style="font-size:0.7rem; color:#cbd5e1;">May</span>
+                </div>
+                <div style="text-align:center;">
+                  <div style="height:75px; background:#38bdf8; border-radius:6px 6px 0 0;"></div>
+                  <span style="font-size:0.7rem; color:#cbd5e1;">Jun</span>
+                </div>
+                <div style="text-align:center;">
+                  <div style="height:95px; background:#10b981; border-radius:6px 6px 0 0;"></div>
+                  <span style="font-size:0.7rem; color:#cbd5e1;">Jul</span>
+                </div>
+                <div style="text-align:center;">
+                  <div style="height:110px; background:#10b981; border-radius:6px 6px 0 0;"></div>
+                  <span style="font-size:0.7rem; color:#cbd5e1;">Ago</span>
+                </div>
+                <div style="text-align:center;">
+                  <div style="height:88px; background:#38bdf8; border-radius:6px 6px 0 0;"></div>
+                  <span style="font-size:0.7rem; color:#cbd5e1;">Sep</span>
+                </div>
+                <div style="text-align:center;">
+                  <div style="height:105px; background:#10b981; border-radius:6px 6px 0 0;"></div>
+                  <span style="font-size:0.7rem; color:#cbd5e1;">Oct</span>
+                </div>
+              </div>
+              <div style="background:rgba(0,0,0,0.35); padding:0.85rem 1rem; border-radius:8px; font-family:monospace; font-size:0.76rem; color:#34d399;">
+                POST /api/v1/invoices/verifactu → 201 Created (QR &amp; Hash generados)
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-info">
+            <h3>Cobra cada factura a tiempo y conecta tu ecosistema</h3>
+            <p>
+              Mantén bajo control la liquidez de tu pyme o actividad como autónomo. Identifica al instante qué facturas están pagadas, pendientes o vencidas y automatiza tu flujo de trabajo.
+            </p>
+            <ul class="feature-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Control de vencimientos y cobros:</strong> Alertas visuales de impagos, conciliación de remesas bancarias y recordatorios automáticos por correo.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Informes y estadísticas:</strong> Cuadros de mando de ingresos, gastos deducibles, rentabilidad por alojamiento/servicio y previsión trimestral de impuestos.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>API REST para integraciones:</strong> Conecta Visaltia Fiscal con tu motor de reservas, tienda online, CRM o aplicaciones móviles Android.</span>
+              </li>
+            </ul>
+            <a href="#precios" class="btn btn-outline-navy">Ver comparativa de planes</a>
+          </div>
+        </div>
+
+        <!-- Resumen de las 7 Características Detalladas -->
+        <div class="all-features-grid reveal">
+          <div class="mini-feature-item">
+            <div class="icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div>
+              <h4>Facturación Completa</h4>
+              <p>Productos, servicios profesionales y estancias en alojamientos.</p>
+            </div>
+          </div>
+          <div class="mini-feature-item">
+            <div class="icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </div>
+            <div>
+              <h4>Generación QR Veri*factu</h4>
+              <p>Código QR tributario y huella encadenada según normativa AEAT.</p>
+            </div>
+          </div>
+          <div class="mini-feature-item">
+            <div class="icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h4>Vencimientos y Cobros</h4>
+              <p>Seguimiento en tiempo real de estados de pago y remesas.</p>
+            </div>
+          </div>
+          <div class="mini-feature-item">
+            <div class="icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            </div>
+            <div>
+              <h4>Clientes y Proveedores</h4>
+              <p>Gestión integral de contactos, gastos soportados y fichas fiscales.</p>
+            </div>
+          </div>
+          <div class="mini-feature-item">
+            <div class="icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <div>
+              <h4>Informes y Estadísticas</h4>
+              <p>Analítica visual de facturación, impuestos y rendimiento mensual.</p>
+            </div>
+          </div>
+          <div class="mini-feature-item">
+            <div class="icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            <div>
+              <h4>Exportación Excel y PDF</h4>
+              <p>Libros registro de IVA e ingresos listos para tu asesoría.</p>
+            </div>
+          </div>
+          <div class="mini-feature-item">
+            <div class="icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div>
+              <h4>API para Integraciones</h4>
+              <p>Endpoints documentados para conectar ERPs, PMS y tiendas online.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banda ¿Para quién es Visaltia Fiscal? (Inspirada en Brisk Invoicing) -->
+        <div class="audience-strip reveal">
+          <h3>¿Para quién está diseñado Visaltia Fiscal?</h3>
+          <div class="audience-circles">
+            <div class="audience-item">
+              <div class="audience-avatar">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+              </div>
+              <span>Hoteles y Hostales</span>
+            </div>
+            <div class="audience-item">
+              <div class="audience-avatar">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <span>Casas Rurales y VUT</span>
+            </div>
+            <div class="audience-item">
+              <div class="audience-avatar">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </div>
+              <span>Pequeñas Empresas</span>
+            </div>
+            <div class="audience-item">
+              <div class="audience-avatar">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <span>Autónomos</span>
+            </div>
+            <div class="audience-item">
+              <div class="audience-avatar">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              </div>
+              <span>Comercios y Servicios</span>
+            </div>
+            <div class="audience-item">
+              <div class="audience-avatar">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
+              </div>
+              <span>Asesorías y Gestorías</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PANEL DE ADMINISTRACIÓN (VERSIÓN FUTURA — DOCKER & CLOUDING.IO)
+         ==================================================================== -->
+    <section class="admin-panel-section" id="panel-clouding">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge badge-dark">Arquitectura Cloud Exclusiva · Plan Premium</span>
+          <h2 class="section-title">Panel Privado de Orquestación Docker en Clouding.io</h2>
+          <p class="section-subtitle">
+            Diseñado para administradores de sistemas, asesorías y empresas que exigen aislamiento total de datos, recursos garantizados y control de versiones en la nube.
+          </p>
+        </div>
+
+        <div class="admin-grid">
+          <!-- Explicación técnica -->
+          <div class="admin-spec-list reveal">
+            <div class="admin-spec-item">
+              <div class="admin-spec-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </div>
+              <div>
+                <h4>Contenedores Docker dedicados por cliente</h4>
+                <p>Cada suscriptor Premium dispone de su propia instancia aislada de Visaltia Fiscal y base de datos dedicada, evitando el efecto «vecino ruidoso».</p>
+              </div>
+            </div>
+
+            <div class="admin-spec-item">
+              <div class="admin-spec-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div>
+                <h4>Monitorización en tiempo real (CPU, RAM y Disco NVMe)</h4>
+                <p>Visualiza métricas de telemetría, consumo de memoria, IOPS de almacenamiento y latencia de red desde un cuadro de mando unificado.</p>
+              </div>
+            </div>
+
+            <div class="admin-spec-item">
+              <div class="admin-spec-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+              </div>
+              <div>
+                <h4>Reinicio, despliegue e integración con API de Clouding.io</h4>
+                <p>Conector nativo con la API de Clouding.io para aprovisionar nodos, reiniciar contenedores, programar snapshots y actualizar versiones de Visaltia Fiscal sin caída de servicio (Zero-Downtime).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mockup visual del Panel de Administración (No funcional, demostrativo) -->
+          <div class="docker-console reveal" aria-label="Mockup del futuro panel de administración de contenedores en Clouding.io">
+            <div class="docker-header">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span class="mockup-dot green"></span>
+                <strong>Visaltia Cloud Orchestrator · Clouding.io API v2</strong>
+              </div>
+              <span class="badge badge-fiscal" style="font-size:0.68rem; padding:0.15rem 0.5rem;">Vista Previa Admin</span>
+            </div>
+
+            <div class="docker-body">
+              <div class="telemetry-bars">
+                <div class="telemetry-box">
+                  <div class="telemetry-label">
+                    <span>vCPU Cluster</span>
+                    <strong>34%</strong>
+                  </div>
+                  <div class="progress-track"><div class="progress-fill fill-cpu"></div></div>
+                </div>
+                <div class="telemetry-box">
+                  <div class="telemetry-label">
+                    <span>RAM DDR4 ECC</span>
+                    <strong>4.6 / 8 GB</strong>
+                  </div>
+                  <div class="progress-track"><div class="progress-fill fill-ram"></div></div>
+                </div>
+                <div class="telemetry-box">
+                  <div class="telemetry-label">
+                    <span>Disco NVMe</span>
+                    <strong>41%</strong>
+                  </div>
+                  <div class="progress-track"><div class="progress-fill fill-disk"></div></div>
+                </div>
+              </div>
+
+              <div style="font-size:0.75rem; color:#94a3b8; margin-bottom:0.6rem; text-transform:uppercase; letter-spacing:0.05em;">
+                Contenedores Activos del Cliente
+              </div>
+
+              <div class="container-list">
+                <div class="container-row">
+                  <div>
+                    <div class="container-name">vf-tenant-mirador-app:v2.4.1</div>
+                    <span style="font-size:0.72rem; color:#94a3b8;">Uptime: 42d 14h · Puerto TLS 443 · Veri*factu Sync</span>
+                  </div>
+                  <div class="container-actions">
+                    <span class="chip-action" style="color:#34d399;">● Running</span>
+                    <span class="chip-action">Reiniciar</span>
+                    <span class="chip-action">Logs</span>
+                  </div>
+                </div>
+
+                <div class="container-row">
+                  <div>
+                    <div class="container-name">vf-tenant-mirador-db:pg16-alpine</div>
+                    <span style="font-size:0.72rem; color:#94a3b8;">Volumen cifrado · Backup diario 03:00 UTC</span>
+                  </div>
+                  <div class="container-actions">
+                    <span class="chip-action" style="color:#34d399;">● Healthy</span>
+                    <span class="chip-action">Snapshot</span>
+                  </div>
+                </div>
+
+                <div class="container-row">
+                  <div>
+                    <div class="container-name">vf-verifactu-signer:v1.8.0</div>
+                    <span style="font-size:0.72rem; color:#94a3b8;">HSM Certificado Cualificado · Cola AEAT: 0 pend.</span>
+                  </div>
+                  <div class="container-actions">
+                    <span class="chip-action" style="color:#38bdf8;">Actualizar v1.9</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. PLANES Y PRECIOS
+         ==================================================================== -->
+    <section class="pricing-section" id="precios">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge badge-electric">Precios Transparentes</span>
+          <h2 class="section-title">Planes adaptados al tamaño de tu negocio</h2>
+          <p class="section-subtitle">
+            Sin permanencia ni costes ocultos. Ambos planes incluyen actualizaciones normativas de Veri*factu y la Ley Crea y Crece.
+          </p>
+
+          <div class="billing-toggle" role="group" aria-label="Seleccionar ciclo de facturación">
+            <button type="button" class="billing-btn active" id="billing-monthly">Pago Mensual</button>
+            <button type="button" class="billing-btn" id="billing-annual">Pago Anual (-20%)</button>
+          </div>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- PLAN NORMAL -->
+          <div class="pricing-card reveal">
+            <div>
+              <h3 class="plan-name">Plan Normal</h3>
+              <p class="plan-desc">Ideal para autónomos, profesionales independientes y pequeños alojamientos con un único NIF.</p>
+
+              <div class="plan-price">
+                <span class="currency">€</span>
+                <span class="amount" id="price-normal">19</span>
+                <span class="period billing-period-label">/ mes (IVA no incl.)</span>
+              </div>
+
+              <ul class="plan-features">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Facturación básica e ilimitada en la nube
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Gestión completa de clientes y proveedores
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Generación de código QR Veri*factu y huella AEAT
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Envío de facturas por email y exportación PDF/Excel
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Control automático de IVA, IGIC e IRPF
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <!-- Botón preparado para futura integración con Stripe / PayPal -->
+              <button
+                type="button"
+                class="btn btn-outline-navy"
+                style="width:100%;"
+                data-checkout-plan="normal"
+                data-gateway-ready="stripe-paypal"
+              >
+                Elegir Plan Normal
+              </button>
+              <div class="gateway-note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Preparado para pago seguro con Stripe / PayPal
+              </div>
+            </div>
+          </div>
+
+          <!-- PLAN PREMIUM -->
+          <div class="pricing-card featured reveal">
+            <span class="popular-ribbon">Más elegido por Pymes y Hoteles</span>
+            <div>
+              <h3 class="plan-name">Plan Premium</h3>
+              <p class="plan-desc">Potencia total multiempresa con contenedor aislado en Clouding.io y panel de administración propio.</p>
+
+              <div class="plan-price">
+                <span class="currency">€</span>
+                <span class="amount" id="price-premium">49</span>
+                <span class="period billing-period-label">/ mes (IVA no incl.)</span>
+              </div>
+
+              <ul class="plan-features">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <strong>Todo lo incluido en el Plan Normal</strong>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <strong>Multiempresa:</strong> Múltiples NIFs y complejos de alojamiento
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <strong>Panel de administración</strong> privado y API REST completa
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <strong>Gestión de contenedores en Clouding</strong> con recursos dedicados
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <strong>Soporte prioritario</strong> telefónico y técnico especializado
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <!-- Botón preparado para futura integración con Stripe / PayPal -->
+              <button
+                type="button"
+                class="btn btn-electric"
+                style="width:100%;"
+                data-checkout-plan="premium"
+                data-gateway-ready="stripe-paypal"
+              >
+                Elegir Plan Premium
+              </button>
+              <div class="gateway-note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Preparado para pago seguro con Stripe / PayPal
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. SECCIÓN DE OTRAS APLICACIONES ANDROID DE VISALTIA
+         ==================================================================== -->
+    <section class="android-section" id="apps-android">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge badge-electric">Ecosistema Móvil Visaltia</span>
+          <h2 class="section-title">Otras aplicaciones Android de Visaltia</h2>
+          <p class="section-subtitle">
+            Además de Visaltia Fiscal, disponemos de soluciones móviles para tu negocio.
+          </p>
+        </div>
+
+        <div class="apps-grid">
+          <!-- App Android 1 -->
+          <article class="app-card reveal">
+            <div>
+              <div class="app-header">
+                <div class="app-icon icon-checkin">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M15 8h2M15 12h2M7 16h10"/></svg>
+                </div>
+                <div>
+                  <span class="app-tag">Hostelería y Turismo</span>
+                  <h3>Visaltia Check-In Scanner</h3>
+                </div>
+              </div>
+              <p>
+                Lectura óptica de DNI y pasaportes desde tu móvil Android para el registro de viajeros (SES.Hospedajes) y envío directo de datos de facturación a Visaltia Fiscal.
+              </p>
+            </div>
+            <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" class="btn-playstore">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
+              Ver en Google Play
+            </a>
+          </article>
+
+          <!-- App Android 2 -->
+          <article class="app-card reveal">
+            <div>
+              <div class="app-header">
+                <div class="app-icon icon-scan">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                </div>
+                <div>
+                  <span class="app-tag">Autónomos y Pymes</span>
+                  <h3>Visaltia Gastos &amp; Tickets</h3>
+                </div>
+              </div>
+              <p>
+                Digitaliza tickets de restaurante, peajes y facturas de proveedores con la cámara del smartphone. Extrae el IVA soportado automáticamente para tu contabilidad.
+              </p>
+            </div>
+            <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" class="btn-playstore">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
+              Ver en Google Play
+            </a>
+          </article>
+
+          <!-- App Android 3 -->
+          <article class="app-card reveal">
+            <div>
+              <div class="app-header">
+                <div class="app-icon icon-tpv">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                </div>
+                <div>
+                  <span class="app-tag">Comercios y Movilidad</span>
+                  <h3>Visaltia TPV Pocket</h3>
+                </div>
+              </div>
+              <p>
+                Terminal punto de venta ágil para tablets y teléfonos Android. Emite facturas simplificadas con código QR Veri*factu en mostrador o desplazamientos a domicilio.
+              </p>
+            </div>
+            <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" class="btn-playstore">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
+              Ver en Google Play
+            </a>
+          </article>
+
+          <!-- App Android 4 -->
+          <article class="app-card reveal">
+            <div>
+              <div class="app-header">
+                <div class="app-icon icon-agenda">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <div>
+                  <span class="app-tag">Gestión Operativa</span>
+                  <h3>Visaltia Turnos &amp; Tareas</h3>
+                </div>
+              </div>
+              <p>
+                Organiza el personal de limpieza de alojamientos, técnicos de mantenimiento y partes de trabajo diarios desde cualquier dispositivo Android en tiempo real.
+              </p>
+            </div>
+            <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" class="btn-playstore">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
+              Ver en Google Play
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7. TESTIMONIOS DE CLIENTES
+         ==================================================================== -->
+    <section class="testimonials-section" id="testimonios">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge badge-electric">Casos de Éxito</span>
+          <h2 class="section-title">Lo que opinan las pymes y alojamientos que usan Visaltia Fiscal</h2>
+          <p class="section-subtitle">
+            Empresas reales que ya han automatizado su facturación cumpliendo al 100% con la normativa tributaria española.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Testimonio 1 -->
+          <article class="testimonial-card reveal">
+            <div>
+              <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+              <p class="testimonial-quote">
+                «Gestionamos 14 apartamentos turísticos y un hotel rural. Con Visaltia Fiscal pasamos de perder tardes enteras con hojas de cálculo a generar las facturas con QR Veri*factu al hacer el check-out en segundos.»
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">CM</div>
+              <div class="author-meta">
+                <strong>Carlos Mendoza</strong>
+                <span>Director de Operaciones · Alojamientos Sierra Norte S.L.</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonio 2 -->
+          <article class="testimonial-card reveal">
+            <div>
+              <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+              <p class="testimonial-quote">
+                «La tranquilidad de estar al día con Veri*factu y la Ley Crea y Crece no tiene precio. Al final de cada trimestre exporto todo en Excel y PDF para mi gestoría con un solo clic y sin un solo descuadre de IVA.»
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">LV</div>
+              <div class="author-meta">
+                <strong>Laura Valdivia</strong>
+                <span>Socia Fundadora · Estudio Valdivia &amp; Asociados</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonio 3 -->
+          <article class="testimonial-card reveal">
+            <div>
+              <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+              <p class="testimonial-quote">
+                «Contratamos el Plan Premium por la opción multiempresa y el despliegue en contenedores sobre Clouding. El rendimiento es instantáneo y la integración con las apps Android nos ahorra horas cada semana.»
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">JR</div>
+              <div class="author-meta">
+                <strong>Javier Ribera</strong>
+                <span>Responsable IT &amp; Finanzas · Grupo Logístico Levante</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. FORMULARIO DE CONTACTO (SOLICITAR INFORMACIÓN POR CORREO)
+         ==================================================================== -->
+    <section class="contact-section" id="contacto">
+      <div class="container contact-wrapper">
+        <div class="contact-info reveal">
+          <span class="badge badge-fiscal">Atención Personalizada</span>
+          <h2>Solicita información o activa tu prueba gratuita de Visaltia Fiscal</h2>
+          <p>
+            Completa el formulario y un especialista de nuestro equipo te enviará por correo electrónico toda la información, acceso a la versión de prueba o presupuesto a medida para tu pyme o alojamiento.
+          </p>
+
+          <div class="contact-Direct-list">
+            <div class="contact-Direct-item">
+              <div class="contact-Direct-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <strong>Correo directo de soporte y ventas:</strong><br />
+                <a href="mailto:soporte@visaltiafiscal.com" style="color:#38bdf8;">soporte@visaltiafiscal.com</a>
+              </div>
+            </div>
+
+            <div class="contact-Direct-item">
+              <div class="contact-Direct-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <strong>Garantía de Cumplimiento Normativo:</strong><br />
+                <span>Actualizaciones incluidas ante cambios técnicos de la AEAT.</span>
+              </div>
+            </div>
+
+            <div class="contact-Direct-item">
+              <div class="contact-Direct-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>
+              </div>
+              <div>
+                <strong>Infraestructura Cloud Europea:</strong><br />
+                <span>Servidores de alta velocidad preparados para Clouding.io.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta del Formulario con Validación y Sanitización -->
+        <div class="contact-form-card reveal">
+          <h3 style="font-size:1.35rem; color:#0a1628; margin-bottom:0.35rem;">Solicitar información por correo</h3>
+          <p style="font-size:0.88rem; color:#64748b; margin-bottom:1.5rem;">
+            Todos los campos son obligatorios. Tus datos son sanitizados y protegidos bajo protocolo seguro.
+          </p>
+
+          <!--
+            NOTA DE ARQUITECTURA BACKEND:
+            El atributo action apunta de forma genérica al endpoint HTTPS donde se conectará
+            el microservicio de envío de correo en el servidor (ej. Clouding.io).
+          -->
+          <form id="contact-form" action="https://api.visaltiafiscal.com/v1/contacto" method="POST" novalidate>
+            <!-- Campo Honeypot invisible contra bots de spam -->
+            <div style="display:none;" aria-hidden="true">
+              <label for="contact-website">No rellenar este campo</label>
+              <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Nombre completo o Empresa *</label>
+              <input
+                type="text"
+                id="contact-name"
+                name="nombre"
+                class="form-control"
+                placeholder="Ej. María Gómez — Hotel Mirador"
+                maxlength="100"
+                required
+                autocomplete="name"
+              />
+              <span class="field-error" id="err-name">Introduce un nombre válido (mínimo 2 caracteres, sin código HTML).</span>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email profesional *</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  class="form-control"
+                  placeholder="nombre@tuempresa.com"
+                  maxlength="150"
+                  required
+                  autocomplete="email"
+                />
+                <span class="field-error" id="err-email">Introduce una dirección de correo electrónico válida.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-phone">Teléfono de contacto *</label>
+                <input
+                  type="tel"
+                  id="contact-phone"
+                  name="telefono"
+                  class="form-control"
+                  placeholder="+34 600 123 456"
+                  maxlength="20"
+                  required
+                  autocomplete="tel"
+                />
+                <span class="field-error" id="err-phone">Introduce un teléfono válido (9 a 15 dígitos).</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-message">Mensaje o consulta *</label>
+              <textarea
+                id="contact-message"
+                name="mensaje"
+                rows="4"
+                class="form-control"
+                placeholder="Cuéntanos si eres pyme, autónomo o alojamiento y qué plan te interesa..."
+                maxlength="1200"
+                required
+              ></textarea>
+              <span class="field-error" id="err-message">Por favor, escribe un mensaje de al menos 10 caracteres.</span>
+            </div>
+
+            <button type="submit" id="submit-btn" class="btn btn-fiscal" style="width:100%;">
+              Solicitar información
+            </button>
+
+            <div id="form-feedback" class="form-feedback" role="status" aria-live="polite"></div>
+
+            <div class="security-footnote">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.3"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span>Protección XSS activa y transmisión preparada para cifrado TLS/HTTPS.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       8. FOOTER CORPORATIVO
+       ==================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#inicio" class="brand-logo" style="margin-bottom:0.85rem;">
+            <div class="brand-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+            </div>
+            <div>Visaltia <span class="accent">Fiscal</span></div>
+          </a>
+          <p style="font-size:0.88rem; max-width:320px; margin-bottom:1rem;">
+            Software de facturación inteligente en la nube para pymes, autónomos y alojamientos. Compatible con Veri*factu y la Ley Crea y Crece.
+          </p>
+          <p style="font-size:0.86rem;">
+            <strong>Soporte:</strong> <a href="mailto:soporte@visaltiafiscal.com" style="color:#38bdf8;">soporte@visaltiafiscal.com</a>
+          </p>
+          <div class="social-links" aria-label="Redes sociales de Visaltia">
+            <a href="# red-linkedin" class="social-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#red-x" class="social-btn" aria-label="X / Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+            </a>
+            <a href="#red-youtube" class="social-btn" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+            <a href="#red-github" class="social-btn" aria-label="Google Play Ecosistema">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Producto</h4>
+          <ul>
+            <li><a href="#beneficios">Beneficios Principales</a></li>
+            <li><a href="#caracteristicas">Facturación Veri*factu</a></li>
+            <li><a href="#panel-clouding">Contenedores Clouding</a></li>
+            <li><a href="#precios">Planes Normal y Premium</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Apps Android Visaltia</h4>
+          <ul>
+            <li><a href="#apps-android">Visaltia Check-In Scanner</a></li>
+            <li><a href="#apps-android">Visaltia Gastos &amp; Tickets</a></li>
+            <li><a href="#apps-android">Visaltia TPV Pocket</a></li>
+            <li><a href="#apps-android">Visaltia Turnos &amp; Tareas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal y Cumplimiento</h4>
+          <ul>
+            <li><a href="#aviso-legal" data-legal="aviso">Aviso legal</a></li>
+            <li><a href="#privacidad" data-legal="privacidad">Política de privacidad</a></li>
+            <li><a href="#cookies" data-legal="cookies">Política de cookies</a></li>
+            <li><a href="#contacto">Centro de soporte</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Visaltia Fiscal — Todos los derechos reservados.</span>
+        <span>Preparado para alojar bajo HTTPS en Clouding.io · Compatible con Veri*factu &amp; Ley Crea y Crece.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Reutilizable para avisos de Pasarela de Pago y Textos Legales -->
+  <div class="modal-backdrop" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button type="button" class="modal-close" id="modal-close" aria-label="Cerrar ventana">✕</button>
+      <h3 id="modal-title" style="color:#0a1628; margin-bottom:0.75rem; font-size:1.25rem;">Información</h3>
+      <p id="modal-body" style="color:#475569; font-size:0.95rem; margin-bottom:1.5rem;"></p>
+      <a href="#contacto" class="btn btn-electric" style="width:100%;" onclick="document.getElementById('info-modal').classList.remove('open')">
+        Ir al Formulario de Contacto
+      </a>
+    </div>
+  </div>
+
+  <!-- Script principal -->
+  <script src="js/main.js"></script>
+</body>
+</html>

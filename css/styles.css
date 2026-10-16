@@ -1,0 +1,1799 @@
+/* ==========================================================================
+   VISALTIA FISCAL — Hoja de Estilos Principal
+   Diseño inspirado en SaaS de facturación (estilo Brisk Invoicing modernizado)
+   Paleta: Azul Oscuro Corporativo, Azul Eléctrico, Blanco, Verde Fiscal
+   ========================================================================== */
+
+:root {
+  /* Colores Corporativos */
+  --navy-950: #060d1d;
+  --navy-900: #0a1628;
+  --navy-800: #10213d;
+  --navy-700: #1b3358;
+  --electric-600: #0055ff;
+  --electric-500: #1a6dff;
+  --electric-400: #38bdf8;
+  --electric-100: #e0eeff;
+  --electric-50: #f0f7ff;
+  
+  /* Verde Fiscal (Veri*factu / Éxito / CTA) */
+  --fiscal-600: #0d9f6e;
+  --fiscal-500: #10b981;
+  --fiscal-400: #34d399;
+  --fiscal-100: #d1fae5;
+
+  /* Neutros y Texto */
+  --white: #ffffff;
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+
+  /* Estados */
+  --danger-500: #ef4444;
+  --warning-500: #f59e0b;
+
+  /* Tipografía y Sombras */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --shadow-sm: 0 2px 8px rgba(10, 22, 40, 0.06);
+  --shadow-md: 0 10px 30px -5px rgba(10, 22, 40, 0.1);
+  --shadow-lg: 0 20px 45px -10px rgba(10, 22, 40, 0.16);
+  --shadow-glow: 0 8px 25px rgba(26, 109, 255, 0.35);
+  --shadow-fiscal: 0 8px 25px rgba(16, 185, 129, 0.35);
+
+  /* Bordes y Transiciones */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset y Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--slate-700);
+  background-color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================================================
+   Utilidades y Botones
+   ========================================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.badge-fiscal {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--fiscal-400);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.badge-electric {
+  background: var(--electric-100);
+  color: var(--electric-600);
+}
+
+.badge-dark {
+  background: rgba(56, 189, 248, 0.14);
+  color: var(--electric-400);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.65rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.96rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn-fiscal {
+  background: linear-gradient(135deg, var(--fiscal-500), var(--fiscal-600));
+  color: var(--white);
+  box-shadow: var(--shadow-fiscal);
+}
+
+.btn-fiscal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(16, 185, 129, 0.48);
+  filter: brightness(1.05);
+}
+
+.btn-electric {
+  background: linear-gradient(135deg, var(--electric-500), var(--electric-600));
+  color: var(--white);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-electric:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(26, 109, 255, 0.45);
+}
+
+.btn-outline-light {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-outline-navy {
+  background: transparent;
+  color: var(--navy-800);
+  border-color: var(--slate-300);
+}
+
+.btn-outline-navy:hover {
+  border-color: var(--electric-500);
+  color: var(--electric-600);
+  background: var(--electric-50);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 3.2vw, 2.55rem);
+  font-weight: 800;
+  color: var(--navy-900);
+  line-height: 1.2;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--slate-600);
+}
+
+/* ==========================================================================
+   Navbar / Cabecera
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(6, 13, 29, 0.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  background: rgba(6, 13, 29, 0.96);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--electric-500), var(--fiscal-500));
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(26, 109, 255, 0.4);
+}
+
+.brand-logo span.accent {
+  color: var(--electric-400);
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.nav-links a {
+  color: var(--slate-300);
+  font-size: 0.93rem;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--white);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.btn-sm {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.86rem;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* ==========================================================================
+   1. HERO SECTION (Inspirado en Brisk Invoicing)
+   ========================================================================== */
+.hero {
+  position: relative;
+  background: radial-gradient(circle at 18% 35%, #122b54 0%, var(--navy-900) 52%, var(--navy-950) 100%);
+  color: var(--white);
+  padding: 9rem 0 8.5rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(26, 109, 255, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 4vw, 3.35rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 1rem 0 1.25rem;
+  letter-spacing: -0.025em;
+}
+
+.hero-title .highlight-blue {
+  color: var(--electric-400);
+}
+
+.hero-title .highlight-gold {
+  color: var(--fiscal-400);
+}
+
+.hero-subtitle {
+  font-size: 1.18rem;
+  color: var(--slate-300);
+  margin-bottom: 1.5rem;
+  max-width: 580px;
+}
+
+.hero-Checklist {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.hero-Checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.98rem;
+  color: var(--slate-200);
+}
+
+.hero-Checklist li svg {
+  color: var(--fiscal-400);
+  flex-shrink: 0;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.hero-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  color: var(--slate-300);
+}
+
+.hero-pillar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.hero-pillar-item span.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--fiscal-400);
+}
+
+/* Mockup de Facturas en Abanico + Dashboard (Estilo Brisk Invoicing) */
+.hero-visual {
+  position: relative;
+  perspective: 1200px;
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.invoice-stack {
+  position: relative;
+  width: 100%;
+  max-width: 470px;
+}
+
+.fan-card {
+  position: absolute;
+  top: 25px;
+  width: 260px;
+  height: 330px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  color: var(--slate-800);
+  font-size: 0.72rem;
+  transition: var(--transition);
+  user-select: none;
+}
+
+.fan-card-left {
+  left: -35px;
+  transform: rotate(-12deg) scale(0.92);
+  opacity: 0.85;
+  background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 100%);
+}
+
+.fan-card-right {
+  right: -35px;
+  transform: rotate(12deg) scale(0.92);
+  opacity: 0.85;
+  background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 100%);
+}
+
+.invoice-stack:hover .fan-card-left {
+  transform: rotate(-16deg) translateX(-12px) scale(0.94);
+}
+
+.invoice-stack:hover .fan-card-right {
+  transform: rotate(16deg) translateX(12px) scale(0.94);
+}
+
+.main-invoice-card {
+  position: relative;
+  z-index: 3;
+  background: var(--white);
+  color: var(--slate-800);
+  border-radius: var(--radius-md);
+  padding: 1.6rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--slate-200);
+}
+
+.inv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--slate-100);
+  margin-bottom: 1rem;
+}
+
+.inv-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  font-size: 1rem;
+}
+
+.inv-badge-verifactu {
+  background: var(--fiscal-100);
+  color: var(--fiscal-600);
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.inv-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.76rem;
+  color: var(--slate-600);
+  margin-bottom: 1rem;
+}
+
+.inv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.inv-table th {
+  background: var(--slate-100);
+  color: var(--slate-700);
+  text-align: left;
+  padding: 0.45rem 0.6rem;
+  font-weight: 600;
+}
+
+.inv-table td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--slate-100);
+}
+
+.inv-table td.num, .inv-table th.num {
+  text-align: right;
+}
+
+.inv-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--slate-50);
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--slate-300);
+}
+
+.qr-box {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.qr-svg {
+  width: 52px;
+  height: 52px;
+  background: var(--white);
+  padding: 4px;
+  border: 1px solid var(--slate-300);
+  border-radius: 6px;
+}
+
+.qr-text {
+  font-size: 0.68rem;
+  line-height: 1.3;
+  color: var(--slate-600);
+}
+
+.qr-text strong {
+  color: var(--navy-900);
+  display: block;
+}
+
+.inv-total-box {
+  text-align: right;
+}
+
+.inv-total-box span.lbl {
+  font-size: 0.7rem;
+  color: var(--slate-500);
+  display: block;
+}
+
+.inv-total-box strong.amount {
+  font-size: 1.25rem;
+  color: var(--electric-600);
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   Barra de Confianza Flotante (Estilo Brisk Invoicing debajo del Hero)
+   ========================================================================== */
+.trust-ribbon-wrapper {
+  margin-top: -4.2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.trust-ribbon {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--slate-200);
+  overflow: hidden;
+}
+
+.trust-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--slate-200);
+  background: var(--slate-50);
+}
+
+.trust-stat-item {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  border-right: 1px solid var(--slate-200);
+}
+
+.trust-stat-item:last-child {
+  border-right: none;
+}
+
+.trust-stat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--electric-100);
+  color: var(--electric-600);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.trust-stat-text strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--navy-900);
+}
+
+.trust-stat-text span {
+  font-size: 0.78rem;
+  color: var(--slate-500);
+}
+
+.trust-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem 1.5rem;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.trust-highlight-card {
+  padding: 0 1rem;
+}
+
+.trust-highlight-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 0.9rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--electric-500), var(--electric-600));
+  color: var(--white);
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow-glow);
+}
+
+.trust-highlight-card h3 {
+  font-size: 1.02rem;
+  color: var(--electric-600);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.trust-highlight-card p {
+  font-size: 0.86rem;
+  color: var(--slate-600);
+}
+
+/* ==========================================================================
+   2. BENEFICIOS PRINCIPALES
+   ========================================================================== */
+.benefits-section {
+  padding: 6rem 0 5rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.benefit-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.85rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--electric-500), var(--fiscal-500));
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--electric-400);
+}
+
+.benefit-card:hover::after {
+  opacity: 1;
+}
+
+.benefit-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--electric-50);
+  color: var(--electric-600);
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.2rem;
+  transition: var(--transition);
+}
+
+.benefit-card:hover .benefit-icon {
+  background: var(--electric-600);
+  color: var(--white);
+}
+
+.benefit-card h3 {
+  font-size: 1.12rem;
+  color: var(--navy-900);
+  margin-bottom: 0.55rem;
+  font-weight: 700;
+}
+
+.benefit-card p {
+  font-size: 0.92rem;
+  color: var(--slate-600);
+}
+
+/* ==========================================================================
+   3. CARACTERÍSTICAS DETALLADAS (Alternating Rows como Brisk Invoicing)
+   ========================================================================== */
+.features-section {
+  padding: 5.5rem 0;
+  background: var(--slate-50);
+  border-top: 1px solid var(--slate-200);
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.feature-row:last-of-type {
+  margin-bottom: 3.5rem;
+}
+
+.feature-row.reverse .feature-visual {
+  order: 2;
+}
+
+.feature-row.reverse .feature-info {
+  order: 1;
+}
+
+.feature-info h3 {
+  font-size: 1.75rem;
+  color: var(--electric-600);
+  font-weight: 800;
+  margin-bottom: 0.85rem;
+  line-height: 1.25;
+}
+
+.feature-info p {
+  color: var(--slate-600);
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1.75rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  color: var(--slate-700);
+}
+
+.feature-list li svg {
+  color: var(--fiscal-500);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* Visual Mockups dentro de Características */
+.mockup-window {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--slate-200);
+  overflow: hidden;
+  position: relative;
+}
+
+.mockup-bar {
+  background: var(--navy-900);
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.mockup-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.mockup-dot.red { background: #ef4444; }
+.mockup-dot.yellow { background: #f59e0b; }
+.mockup-dot.green { background: #10b981; }
+
+.mockup-body {
+  padding: 1.5rem;
+}
+
+.kpi-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+  margin-bottom: 1.2rem;
+}
+
+.kpi-mini-card {
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+.kpi-mini-card span {
+  font-size: 0.72rem;
+  color: var(--slate-500);
+  display: block;
+}
+
+.kpi-mini-card strong {
+  font-size: 1.15rem;
+  color: var(--navy-900);
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 0.18rem 0.55rem;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.status-paid { background: var(--fiscal-100); color: var(--fiscal-600); }
+.status-pending { background: #fef3c7; color: #d97706; }
+
+/* Grid de todas las 7 características clave */
+.all-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.mini-feature-item {
+  background: var(--white);
+  padding: 1.35rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--slate-200);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.mini-feature-item .icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--fiscal-100);
+  color: var(--fiscal-600);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.mini-feature-item h4 {
+  font-size: 0.96rem;
+  color: var(--navy-900);
+  margin-bottom: 0.25rem;
+}
+
+.mini-feature-item p {
+  font-size: 0.84rem;
+  color: var(--slate-600);
+}
+
+/* ¿Para quién es Visaltia Fiscal? (Estilo Brisk Invoicing con círculos) */
+.audience-strip {
+  margin-top: 4.5rem;
+  text-align: center;
+}
+
+.audience-strip h3 {
+  font-size: 1.65rem;
+  color: var(--electric-600);
+  margin-bottom: 2rem;
+  font-weight: 800;
+}
+
+.audience-circles {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+}
+
+.audience-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.audience-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--electric-100);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  place-items: center;
+  color: var(--electric-600);
+  transition: var(--transition);
+}
+
+.audience-item:hover .audience-avatar {
+  border-color: var(--electric-500);
+  transform: scale(1.06);
+  box-shadow: var(--shadow-glow);
+}
+
+.audience-item span {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--navy-800);
+}
+
+/* ==========================================================================
+   PANEL DE ADMINISTRACIÓN DOCKER & CLOUDING.IO (Sección Informativa Técnica)
+   ========================================================================== */
+.admin-panel-section {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, var(--navy-950) 0%, var(--navy-900) 100%);
+  color: var(--white);
+  position: relative;
+}
+
+.admin-panel-section .section-title {
+  color: var(--white);
+}
+
+.admin-panel-section .section-subtitle {
+  color: var(--slate-300);
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.admin-spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.admin-spec-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: var(--transition);
+}
+
+.admin-spec-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--electric-400);
+}
+
+.admin-spec-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--electric-400);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.admin-spec-item h4 {
+  font-size: 1rem;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+
+.admin-spec-item p {
+  font-size: 0.86rem;
+  color: var(--slate-300);
+}
+
+/* Mockup de Consola Docker / Clouding.io */
+.docker-console {
+  background: #0b1324;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+}
+
+.docker-header {
+  background: #060b16;
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  color: var(--slate-300);
+}
+
+.docker-body {
+  padding: 1.5rem;
+}
+
+.telemetry-bars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.telemetry-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.9rem;
+  border-radius: var(--radius-sm);
+}
+
+.telemetry-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--slate-300);
+  margin-bottom: 0.45rem;
+}
+
+.progress-track {
+  height: 7px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 99px;
+}
+
+.fill-cpu { width: 34%; background: var(--electric-400); }
+.fill-ram { width: 58%; background: var(--fiscal-400); }
+.fill-disk { width: 41%; background: #a78bfa; }
+
+.container-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.container-row {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.container-name {
+  font-family: monospace;
+  color: var(--electric-400);
+  font-weight: 600;
+}
+
+.container-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.chip-action {
+  padding: 0.2rem 0.55rem;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--slate-200);
+  font-size: 0.7rem;
+}
+
+/* ==========================================================================
+   4. PLANES Y PRECIOS
+   ========================================================================== */
+.pricing-section {
+  padding: 6rem 0;
+  background: var(--white);
+}
+
+.billing-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: var(--slate-100);
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  margin-top: 1.5rem;
+}
+
+.billing-btn {
+  border: none;
+  background: transparent;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--slate-600);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.billing-btn.active {
+  background: var(--navy-900);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.2rem;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+  position: relative;
+}
+
+.pricing-card.featured {
+  border: 2px solid var(--electric-500);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(180deg, var(--electric-50) 0%, var(--white) 35%);
+}
+
+.popular-ribbon {
+  position: absolute;
+  top: -14px;
+  right: 28px;
+  background: linear-gradient(135deg, var(--electric-500), var(--fiscal-500));
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.plan-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  margin-bottom: 0.4rem;
+}
+
+.plan-desc {
+  font-size: 0.92rem;
+  color: var(--slate-600);
+  margin-bottom: 1.5rem;
+}
+
+.plan-price {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.plan-price .currency {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  vertical-align: top;
+}
+
+.plan-price .amount {
+  font-size: 3.1rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  line-height: 1;
+}
+
+.plan-price .period {
+  font-size: 0.9rem;
+  color: var(--slate-500);
+}
+
+.plan-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2.2rem;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  color: var(--slate-700);
+}
+
+.plan-features li svg {
+  color: var(--fiscal-500);
+  flex-shrink: 0;
+}
+
+.gateway-note {
+  margin-top: 0.85rem;
+  text-align: center;
+  font-size: 0.76rem;
+  color: var(--slate-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+/* ==========================================================================
+   6. SECCIÓN DE OTRAS APLICACIONES ANDROID DE VISALTIA
+   ========================================================================== */
+.android-section {
+  padding: 6rem 0;
+  background: var(--slate-50);
+  border-top: 1px solid var(--slate-200);
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  gap: 1.6rem;
+}
+
+.app-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.app-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--fiscal-400);
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.app-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.app-icon.icon-checkin { background: linear-gradient(135deg, #0ea5e9, #2563eb); }
+.app-icon.icon-scan { background: linear-gradient(135deg, #10b981, #059669); }
+.app-icon.icon-tpv { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+.app-icon.icon-agenda { background: linear-gradient(135deg, #f59e0b, #d97706); }
+
+.app-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--fiscal-600);
+  background: var(--fiscal-100);
+  padding: 0.15rem 0.55rem;
+  border-radius: 99px;
+}
+
+.app-card h3 {
+  font-size: 1.18rem;
+  color: var(--navy-900);
+  margin-top: 0.2rem;
+}
+
+.app-card p {
+  font-size: 0.9rem;
+  color: var(--slate-600);
+  margin-bottom: 1.5rem;
+}
+
+.btn-playstore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: var(--radius-sm);
+  background: var(--navy-900);
+  color: var(--white);
+  font-size: 0.86rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.btn-playstore:hover {
+  background: var(--electric-600);
+}
+
+/* ==========================================================================
+   7. TESTIMONIOS
+   ========================================================================== */
+.testimonials-section {
+  padding: 6rem 0;
+  background: var(--white);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+
+.testimonial-card {
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.stars {
+  color: #f59e0b;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.testimonial-quote {
+  font-size: 0.96rem;
+  color: var(--slate-700);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy-800), var(--electric-500));
+  color: var(--white);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.author-meta strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--navy-900);
+}
+
+.author-meta span {
+  font-size: 0.8rem;
+  color: var(--slate-500);
+}
+
+/* ==========================================================================
+   5. FORMULARIO DE CONTACTO (Con validación y sanitización XSS)
+   ========================================================================== */
+.contact-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 100%);
+  color: var(--white);
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.contact-info h2 {
+  font-size: clamp(1.85rem, 3vw, 2.4rem);
+  font-weight: 800;
+  margin: 0.75rem 0 1rem;
+}
+
+.contact-info p {
+  color: var(--slate-300);
+  margin-bottom: 2rem;
+}
+
+.contact-Direct-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-Direct-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.95rem;
+  color: var(--slate-200);
+}
+
+.contact-Direct-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--fiscal-400);
+  display: grid;
+  place-items: center;
+}
+
+.contact-form-card {
+  background: var(--white);
+  color: var(--slate-800);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--navy-900);
+  margin-bottom: 0.4rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1.5px solid var(--slate-300);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--slate-800);
+  transition: var(--transition);
+  background: var(--slate-50);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--electric-500);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(26, 109, 255, 0.15);
+}
+
+.form-control.is-invalid {
+  border-color: var(--danger-500);
+  background: #fef2f2;
+}
+
+.field-error {
+  display: none;
+  color: var(--danger-500);
+  font-size: 0.78rem;
+  margin-top: 0.3rem;
+}
+
+.field-error.visible {
+  display: block;
+}
+
+.form-feedback {
+  display: none;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.form-feedback.success {
+  display: block;
+  background: var(--fiscal-100);
+  color: #065f46;
+  border: 1px solid var(--fiscal-400);
+}
+
+.form-feedback.error {
+  display: block;
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #f87171;
+}
+
+.security-footnote {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.76rem;
+  color: var(--slate-500);
+  margin-top: 0.9rem;
+}
+
+/* ==========================================================================
+   8. FOOTER
+   ========================================================================== */
+.site-footer {
+  background: var(--navy-950);
+  color: var(--slate-300);
+  padding: 4.5rem 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-col h4 {
+  color: var(--white);
+  font-size: 0.96rem;
+  margin-bottom: 1.1rem;
+  font-weight: 700;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-col ul a {
+  font-size: 0.88rem;
+  color: var(--slate-300);
+}
+
+.footer-col ul a:hover {
+  color: var(--electric-400);
+}
+
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  display: grid;
+  place-items: center;
+  color: var(--slate-300);
+}
+
+.social-btn:hover {
+  background: var(--electric-500);
+  color: var(--white);
+}
+
+.footer-bottom {
+  padding-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--slate-500);
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   Animaciones (Fade-in & Slide-up)
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.65s ease-out, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Modal Informativo (Para botones de Pasarela o Textos Legales) */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 13, 29, 0.75);
+  backdrop-filter: blur(5px);
+  display: none;
+  place-items: center;
+  z-index: 2000;
+  padding: 1.5rem;
+}
+
+.modal-backdrop.open {
+  display: grid;
+}
+
+.modal-box {
+  background: var(--white);
+  color: var(--slate-800);
+  max-width: 520px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  background: var(--slate-100);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Media Queries (Responsive)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hero-grid,
+  .feature-row,
+  .admin-grid,
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-row.reverse .feature-visual {
+    order: 1;
+  }
+  .feature-row.reverse .feature-info {
+    order: 2;
+  }
+
+  .trust-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trust-highlights,
+  .pricing-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .audience-circles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    width: 100%;
+    background: var(--navy-900);
+    flex-direction: column;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .fan-card {
+    display: none;
+  }
+
+  .trust-stats,
+  .form-row-2,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .audience-circles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

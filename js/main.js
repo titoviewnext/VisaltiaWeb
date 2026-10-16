@@ -346,7 +346,7 @@ function initLegalModals() {
     },
     privacidad: {
       title: 'Política de Privacidad (RGPD / LOPDGDD)',
-      body: 'Los datos recogidos en el formulario de contacto se emplean exclusivamente para responder a tu solicitud comercial o técnica sobre Visaltia Fiscal. No cedemos datos a terceros y toda la infraestructura se aloja en servidores europeos en Clouding.io bajo cifrado TLS/HTTPS.'
+      body: 'Los datos recogidos en el formulario de contacto se emplean exclusivamente para responder a tu solicitud comercial o técnica sobre Visaltia Fiscal. No cedemos datos a terceros y toda la infraestructura se aloja en servidores europeos bajo cifrado TLS/HTTPS.'
     },
     cookies: {
       title: 'Política de Cookies',

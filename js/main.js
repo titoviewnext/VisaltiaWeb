@@ -270,13 +270,13 @@ function initContactForm() {
       return;
     }
 
-    // Envío real mediante FormSubmit.co bajo HTTPS a titoviewnext@gmail.com
+    // Envío real mediante FormSubmit.co bajo HTTPS a visaltia.nt@gmail.com
     submitBtn.disabled = true;
     const originalBtnText = submitBtn.textContent;
     submitBtn.textContent = 'Enviando solicitud segura...';
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/titoviewnext@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/visaltia.nt@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -307,7 +307,7 @@ function initContactForm() {
     } catch (error) {
       feedbackBox.classList.add('error');
       feedbackBox.textContent =
-        'No se pudo procesar el envío automático en este momento. Por favor, inténtalo de nuevo o escríbenos directamente a titoviewnext@gmail.com.';
+        'No se pudo procesar el envío automático en este momento. Por favor, inténtalo de nuevo o escríbenos directamente a visaltia.nt@gmail.com.';
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = originalBtnText;

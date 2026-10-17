@@ -396,6 +396,7 @@ function initCompanyAccessModal() {
   const closeBtn = document.getElementById('company-modal-close');
   const openBtns = document.querySelectorAll('[data-open-company-modal]');
   const input = document.getElementById('company-access-input');
+  const errorEl = document.getElementById('company-access-error');
   const previewLink = document.getElementById('company-url-preview');
   const form = document.getElementById('company-access-form');
 
@@ -404,10 +405,25 @@ function initCompanyAccessModal() {
   const BASE_DOMAIN = '200-234-232-41.sslip.io';
 
   const updatePreview = () => {
-    const slug = toTenantSlug(input.value) || 'suministros-fernandez';
+    const slug = toTenantSlug(input.value);
+    if (errorEl) errorEl.classList.remove('visible');
+    input.classList.remove('is-invalid');
+
+    if (!slug || slug.length < 3) {
+      previewLink.textContent = `https://<tu-empresa>.${BASE_DOMAIN}`;
+      previewLink.href = '#';
+      previewLink.style.color = '#64748b';
+      previewLink.style.pointerEvents = 'none';
+      previewLink.style.textDecoration = 'none';
+      return { slug: '', url: '' };
+    }
+
     const url = `https://${slug}.${BASE_DOMAIN}`;
     previewLink.textContent = url;
     previewLink.href = url;
+    previewLink.style.color = '#0284c7';
+    previewLink.style.pointerEvents = 'auto';
+    previewLink.style.textDecoration = 'underline';
     return { slug, url };
   };
 
@@ -432,7 +448,13 @@ function initCompanyAccessModal() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const { url } = updatePreview();
+    const { slug, url } = updatePreview();
+    if (!slug || slug.length < 3) {
+      input.classList.add('is-invalid');
+      if (errorEl) errorEl.classList.add('visible');
+      input.focus();
+      return;
+    }
     window.open(url, '_blank', 'noopener,noreferrer');
   });
 

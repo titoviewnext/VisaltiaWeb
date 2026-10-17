@@ -38,7 +38,7 @@
         ¡Gracias por suscribirte a Visaltia Fiscal!
       </h1>
       <p style="font-size:0.95rem; color:#475569; margin-bottom:1.5rem; line-height:1.55;">
-        Tu espacio privado de facturación con Veri*factu ya está disponible. Introduce el nombre comercial que pusiste durante el pago para abrir directamente tu empresa:
+        Tu espacio privado de facturación con Veri*factu ya está disponible. Introduce el nombre comercial que indicaste durante el pago para abrir directamente tu empresa:
       </p>
 
       <form id="welcome-access-form" novalidate>
@@ -48,18 +48,19 @@
             type="text"
             id="welcome-company-input"
             class="form-control"
-            placeholder="Ej. Suministros Fernandez"
-            value="Suministros Fernandez"
+            placeholder="Escribe aquí el nombre de tu empresa..."
+            value=""
             required
           />
+          <span class="field-error" id="welcome-error">Por favor, escribe el nombre de tu empresa (mínimo 3 caracteres).</span>
         </div>
 
         <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:12px; padding:0.9rem 1.1rem; margin-bottom:1.35rem;">
           <div style="font-size:0.74rem; text-transform:uppercase; letter-spacing:0.04em; color:#64748b; font-weight:700; margin-bottom:0.25rem;">
             Dirección HTTPS exclusiva de tu empresa:
           </div>
-          <a id="welcome-url-preview" href="https://suministros-fernandez.200-234-232-41.sslip.io" target="_blank" rel="noopener noreferrer" style="font-family:monospace; font-size:0.95rem; font-weight:700; color:#0284c7; word-break:break-all; text-decoration:underline;">
-            https://suministros-fernandez.200-234-232-41.sslip.io
+          <a id="welcome-url-preview" href="#" target="_blank" rel="noopener noreferrer" style="font-family:monospace; font-size:0.95rem; font-weight:700; color:#64748b; word-break:break-all; text-decoration:none; pointer-events:none;">
+            https://&lt;tu-empresa&gt;.200-234-232-41.sslip.io
           </a>
         </div>
 
@@ -70,17 +71,14 @@
 
       <div style="margin-top:1.5rem; padding-top:1.2rem; border-top:1px solid #e2e8f0;">
         <div style="font-size:0.78rem; font-weight:700; color:#64748b; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.65rem;">
-          Acceso directo en 1 clic a tus empresas activas:
+          Entornos de demostración públicos:
         </div>
         <div style="display:flex; flex-wrap:wrap; gap:0.55rem;">
-          <a href="https://suministros-fernandez.200-234-232-41.sslip.io" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-sm">
-            🏢 Suministros Fernandez ↗
-          </a>
           <a href="https://alfa.200-234-232-41.sslip.io" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-sm">
-            🏢 Empresa Alfa ↗
+            🏢 Empresa de prueba Alfa ↗
           </a>
           <a href="https://beta.200-234-232-41.sslip.io" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-sm">
-            🏢 Empresa Beta ↗
+            🏢 Empresa de prueba Beta ↗
           </a>
         </div>
       </div>
@@ -90,6 +88,7 @@
   <script>
     (function () {
       const input = document.getElementById('welcome-company-input');
+      const errorEl = document.getElementById('welcome-error');
       const preview = document.getElementById('welcome-url-preview');
       const form = document.getElementById('welcome-access-form');
       const BASE_DOMAIN = '200-234-232-41.sslip.io';
@@ -106,10 +105,25 @@
       }
 
       function update() {
-        const slug = toSlug(input.value) || 'suministros-fernandez';
+        const slug = toSlug(input.value);
+        if (errorEl) errorEl.classList.remove('visible');
+        input.classList.remove('is-invalid');
+
+        if (!slug || slug.length < 3) {
+          preview.textContent = 'https://<tu-empresa>.' + BASE_DOMAIN;
+          preview.href = '#';
+          preview.style.color = '#64748b';
+          preview.style.pointerEvents = 'none';
+          preview.style.textDecoration = 'none';
+          return '';
+        }
+
         const url = 'https://' + slug + '.' + BASE_DOMAIN;
         preview.textContent = url;
         preview.href = url;
+        preview.style.color = '#0284c7';
+        preview.style.pointerEvents = 'auto';
+        preview.style.textDecoration = 'underline';
         return url;
       }
 
@@ -122,7 +136,14 @@
       input.addEventListener('input', update);
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        window.location.href = update();
+        const url = update();
+        if (!url) {
+          input.classList.add('is-invalid');
+          if (errorEl) errorEl.classList.add('visible');
+          input.focus();
+          return;
+        }
+        window.location.href = url;
       });
     })();
   </script>

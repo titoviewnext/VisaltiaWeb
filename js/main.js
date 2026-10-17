@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPaymentPlaceholders();
   initContactForm();
   initLegalModals();
+  initCompanyAccessModal();
 });
 
 /**
@@ -374,3 +375,77 @@ function initLegalModals() {
     });
   }
 }
+
+/**
+ * 7. Acceso directo a empresas creadas tras el pago en Stripe (HTTPS sslip.io)
+ */
+function toTenantSlug(rawName) {
+  if (typeof rawName !== 'string') return '';
+  return rawName
+    .toLowerCase()
+    .trim()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9-]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function initCompanyAccessModal() {
+  const modal = document.getElementById('company-access-modal');
+  const closeBtn = document.getElementById('company-modal-close');
+  const openBtns = document.querySelectorAll('[data-open-company-modal]');
+  const input = document.getElementById('company-access-input');
+  const previewLink = document.getElementById('company-url-preview');
+  const form = document.getElementById('company-access-form');
+
+  if (!modal || !input || !previewLink || !form) return;
+
+  const BASE_DOMAIN = '200-234-232-41.sslip.io';
+
+  const updatePreview = () => {
+    const slug = toTenantSlug(input.value) || 'suministros-fernandez';
+    const url = `https://${slug}.${BASE_DOMAIN}`;
+    previewLink.textContent = url;
+    previewLink.href = url;
+    return { slug, url };
+  };
+
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      updatePreview();
+      modal.classList.add('open');
+      setTimeout(() => input.focus(), 80);
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => modal.classList.remove('open'));
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.classList.remove('open');
+  });
+
+  input.addEventListener('input', updatePreview);
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const { url } = updatePreview();
+    window.open(url, '_blank', 'noopener,noreferrer');
+  });
+
+  // Abrir automáticamente si viene redirigido tras el pago (?pago=ok o ?empresa=...)
+  const params = new URLSearchParams(window.location.search);
+  const empresaParam = params.get('empresa');
+  if (empresaParam) {
+    input.value = sanitizeInput(empresaParam);
+    updatePreview();
+  }
+  if (params.get('pago') === 'ok' || empresaParam || window.location.hash === '#mi-empresa') {
+    updatePreview();
+    modal.classList.add('open');
+  }
+}
+

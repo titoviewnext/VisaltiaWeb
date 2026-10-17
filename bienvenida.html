@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>¡Bienvenido a Visaltia Fiscal! — Accede a tu Empresa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="img/visaltia-fiscal-logo.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body style="min-height:100vh; display:flex; flex-direction:column; background:linear-gradient(145deg,#071120 0%,#0f223d 55%,#142d52 100%); color:#f8fafc;">
+
+  <header class="navbar scrolled" style="position:relative;">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon brand-icon-img">
+          <img src="img/visaltia-fiscal-logo.png" alt="Logo oficial de Visaltia Fiscal" />
+        </div>
+        <div>Visaltia <span class="accent">Fiscal</span></div>
+      </a>
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-outline-light btn-sm">← Volver a la Web Principal</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="flex:1; display:flex; align-items:center; justify-content:center; padding:3rem 1.25rem;">
+    <div style="background:#ffffff; color:#0f172a; max-width:580px; width:100%; border-radius:20px; padding:2.5rem 2.2rem; box-shadow:0 25px 60px rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.2);">
+      <div style="display:inline-flex; align-items:center; gap:0.5rem; background:#ecfdf5; color:#059669; border:1px solid #a7f3d0; font-weight:700; font-size:0.8rem; padding:0.35rem 0.85rem; border-radius:999px; margin-bottom:1rem;">
+        ✓ Suscripción confirmada · Entorno HTTPS listo
+      </div>
+
+      <h1 style="font-size:1.65rem; font-weight:800; color:#0a1628; margin-bottom:0.5rem;">
+        ¡Gracias por suscribirte a Visaltia Fiscal!
+      </h1>
+      <p style="font-size:0.95rem; color:#475569; margin-bottom:1.5rem; line-height:1.55;">
+        Tu espacio privado de facturación con Veri*factu ya está disponible. Introduce el nombre comercial que pusiste durante el pago para abrir directamente tu empresa:
+      </p>
+
+      <form id="welcome-access-form" novalidate>
+        <div class="form-group" style="margin-bottom:1rem;">
+          <label class="form-label" for="welcome-company-input">Nombre de tu empresa</label>
+          <input
+            type="text"
+            id="welcome-company-input"
+            class="form-control"
+            placeholder="Ej. Suministros Fernandez"
+            value="Suministros Fernandez"
+            required
+          />
+        </div>
+
+        <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:12px; padding:0.9rem 1.1rem; margin-bottom:1.35rem;">
+          <div style="font-size:0.74rem; text-transform:uppercase; letter-spacing:0.04em; color:#64748b; font-weight:700; margin-bottom:0.25rem;">
+            Dirección HTTPS exclusiva de tu empresa:
+          </div>
+          <a id="welcome-url-preview" href="https://suministros-fernandez.200-234-232-41.sslip.io" target="_blank" rel="noopener noreferrer" style="font-family:monospace; font-size:0.95rem; font-weight:700; color:#0284c7; word-break:break-all; text-decoration:underline;">
+            https://suministros-fernandez.200-234-232-41.sslip.io
+          </a>
+        </div>
+
+        <button type="submit" class="btn btn-fiscal" style="width:100%; justify-content:center; font-size:1rem; padding:0.95rem 1.4rem;">
+          Entrar ahora a mi Empresa ↗
+        </button>
+      </form>
+
+      <div style="margin-top:1.5rem; padding-top:1.2rem; border-top:1px solid #e2e8f0;">
+        <div style="font-size:0.78rem; font-weight:700; color:#64748b; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.65rem;">
+          Acceso directo en 1 clic a tus empresas activas:
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:0.55rem;">
+          <a href="https://suministros-fernandez.200-234-232-41.sslip.io" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-sm">
+            🏢 Suministros Fernandez ↗
+          </a>
+          <a href="https://alfa.200-234-232-41.sslip.io" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-sm">
+            🏢 Empresa Alfa ↗
+          </a>
+          <a href="https://beta.200-234-232-41.sslip.io" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-sm">
+            🏢 Empresa Beta ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      const input = document.getElementById('welcome-company-input');
+      const preview = document.getElementById('welcome-url-preview');
+      const form = document.getElementById('welcome-access-form');
+      const BASE_DOMAIN = '200-234-232-41.sslip.io';
+
+      function toSlug(str) {
+        return (str || '')
+          .toLowerCase()
+          .trim()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .replace(/[^a-z0-9-]/g, '-')
+          .replace(/-+/g, '-')
+          .replace(/^-|-$/g, '');
+      }
+
+      function update() {
+        const slug = toSlug(input.value) || 'suministros-fernandez';
+        const url = 'https://' + slug + '.' + BASE_DOMAIN;
+        preview.textContent = url;
+        preview.href = url;
+        return url;
+      }
+
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('empresa')) {
+        input.value = params.get('empresa');
+      }
+      update();
+
+      input.addEventListener('input', update);
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        window.location.href = update();
+      });
+    })();
+  </script>
+</body>
+</html>
